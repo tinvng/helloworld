@@ -25,8 +25,8 @@ import (
 	"os"
 	"time"
 
+	pb "../helloworld"
 	"google.golang.org/grpc"
-	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 )
 
 const (
@@ -48,6 +48,7 @@ func main() {
 	if len(os.Args) > 1 {
 		name = os.Args[1]
 	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
